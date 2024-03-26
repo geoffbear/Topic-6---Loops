@@ -1,4 +1,6 @@
-﻿namespace Topic_6___Loops
+﻿using System.Text.RegularExpressions;
+
+namespace Topic_6___Loops
 {
     internal class Program
     {
@@ -26,11 +28,11 @@
                 }
                 else if (choice == "2")
                 {
-                    Console.WriteLine("You chosen option 2");
+                    Console.WriteLine("You chosen ");
                 }
                 else if (choice == "3")
                 {
-
+                    Console.WriteLine("You have chosen Odd sum.");
                 }
                 else if (choice == "4")
                 {
@@ -42,13 +44,27 @@
                     max = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Give me a minimum whole number LOWER than the previous value.");
                     min = Convert.ToInt32(Console.ReadLine());
-
-                    Console.WriteLine("Here are 25 random numbers with in your chosen range:");
-                    for (int i = 0; i < 25; i++)
+                    if (min > max)
                     {
-                        userNumber = generator.Next(min, max);
-                        Console.Write($"{userNumber} ");
+                        Console.WriteLine("Here are 25 random numbers with in your chosen range:");
+                        for (int i = 0; i < 25; i++)
+                        {
+                            userNumber = generator.Next(max, min);
+                            Console.Write($"{userNumber} ");
+                        }
                     }
+                    else if (max > min)
+                    {
+                        Console.WriteLine("Here are 25 random numbers with in your chosen range:");
+                        for (int i = 0; i < 25; i++)
+                        {
+                            userNumber = generator.Next(min, max);
+                            Console.Write($"{userNumber} ");
+                        }
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine("Press ENTER to continue.");
+                    Console.ReadLine();
                 }
             }
         }
