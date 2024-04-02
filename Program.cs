@@ -9,7 +9,7 @@ namespace Topic_6___Loops
         {
             string choice = "";
             string choicePercentage = "";
-            int max, min, userNumber, percentages;
+            int max, min, userNumber, percentages, above70, totalChoices;
             int addition = 0;
             List<int> numberList = new List<int>();
             while (choice != "q")
@@ -35,18 +35,28 @@ namespace Topic_6___Loops
                     Console.WriteLine("You chosen Percent Passing");
                     Console.WriteLine("Give me as many numbers as you want and I will calculate what % is above 70, type 'Q' when done.");
                     Console.WriteLine();
-                    while (choicePercentage != "Q")
+                    bool done = false;
+                    while (!done)
                     {
-                        Console.WriteLine("Type 'Q' if you wish, if not press enter.");
+                        Console.WriteLine("Type a number or 'Q' to quit.");
                         choicePercentage = Console.ReadLine();
-                        Console.WriteLine("");
-                        percentages = Convert.ToInt32(Console.ReadLine());
-                        numberList.Add(percentages);
+
+                        if (choicePercentage == "Q")
+                        {
+                            done = true;
+                        }
+
+                        else
+                        {
+                            totalChoices++;
+
+                            if (choicePercentage >= 70)
+                            {
+
+                            }
+                        }
                     }
-                    if (choicePercentage == "Q")
-                    {
-                        
-                    }
+                   
 
 
 
