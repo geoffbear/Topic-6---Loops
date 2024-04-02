@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using System.Transactions;
 
 namespace Topic_6___Loops
 {
@@ -7,10 +8,13 @@ namespace Topic_6___Loops
         static void Main(string[] args)
         {
             string choice = "";
-            int max, min, userNumber;
+            string choicePercentage = "";
+            int max, min, userNumber, percentages;
+            int addition = 0;
+            List<int> numberList = new List<int>();
             while (choice != "q")
             {
-                Console.Clear(); // Optional
+                Console.Clear(); 
                 Console.WriteLine("Welcome to my Geoffrey's Great Games. Type a numeric option:");
                 Console.WriteLine();
                 Console.WriteLine("1 - The Pretty Prompter");
@@ -28,11 +32,43 @@ namespace Topic_6___Loops
                 }
                 else if (choice == "2")
                 {
-                    Console.WriteLine("You chosen ");
+                    Console.WriteLine("You chosen Percent Passing");
+                    Console.WriteLine("Give me as many numbers as you want and I will calculate what % is above 70, type 'Q' when done.");
+                    Console.WriteLine();
+                    while (choicePercentage != "Q")
+                    {
+                        Console.WriteLine("Type 'Q' if you wish, if not press enter.");
+                        choicePercentage = Console.ReadLine();
+                        Console.WriteLine("");
+                        percentages = Convert.ToInt32(Console.ReadLine());
+                        numberList.Add(percentages);
+                    }
+                    if (choicePercentage == "Q")
+                    {
+                        
+                    }
+
+
+
+
+
+
                 }
                 else if (choice == "3")
                 {
                     Console.WriteLine("You have chosen Odd sum.");
+                    Console.WriteLine();
+
+                    Console.WriteLine("Give me a number and I will add up all its previous odd numbers.");
+                    int oddNumber = Convert.ToInt32(Console.ReadLine());
+                    for (int i = 1; i < oddNumber; i += 2)
+                    {
+                        addition += i;
+                    }
+                    Console.WriteLine("Your total is: " + addition);
+                    Console.WriteLine();
+                    Console.WriteLine("Press ENTER to continue.");
+                    Console.ReadLine();
                 }
                 else if (choice == "4")
                 {
