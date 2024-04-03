@@ -9,8 +9,10 @@ namespace Topic_6___Loops
         {
             string choice = "";
             string choicePercentage = "";
-            int max, min, userNumber, percentages, above70, totalChoices;
+            int max, min, userNumber, percentages;
             int addition = 0;
+            double totalChoices = 0;
+            double above70 = 0;
             List<int> numberList = new List<int>();
             while (choice != "q")
             {
@@ -28,7 +30,26 @@ namespace Topic_6___Loops
 
                 if (choice == "1")
                 {
-                    Console.WriteLine("You chosen option 1");
+                    Console.WriteLine("You chosen Prompter.");
+                    Console.WriteLine("Give me 2 numbers and you will play a little game with them.");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 }
                 else if (choice == "2")
                 {
@@ -39,7 +60,7 @@ namespace Topic_6___Loops
                     while (!done)
                     {
                         Console.WriteLine("Type a number or 'Q' to quit.");
-                        choicePercentage = Console.ReadLine();
+                        choicePercentage = Console.ReadLine().ToUpper().Trim();
 
                         if (choicePercentage == "Q")
                         {
@@ -50,19 +71,15 @@ namespace Topic_6___Loops
                         {
                             totalChoices++;
 
-                            if (choicePercentage >= 70)
+                            if (Convert.ToInt32(choicePercentage) >= 70)
                             {
-
+                                above70++;
                             }
                         }
                     }
-                   
-
-
-
-
-
-
+                        Console.WriteLine(Math.Round(above70 / totalChoices * 100, 1)+ "% is above 70.");
+                        Console.WriteLine("Press Enter to continue.");
+                        Console.ReadLine();
                 }
                 else if (choice == "3")
                 {
