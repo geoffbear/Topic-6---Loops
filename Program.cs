@@ -9,8 +9,9 @@ namespace Topic_6___Loops
         {
             string choice = "";
             string choicePercentage = "";
-            int max, min, userNumber, percentages, guess;
+            int max, min, userNumber, percentages;
             int addition = 0;
+            int guess = 0;
             double totalChoices = 0;
             double above70 = 0;
             List<int> numberList = new List<int>();
@@ -39,16 +40,17 @@ namespace Topic_6___Loops
                     int secondNumber = Convert.ToInt32(Console.ReadLine());
                     if (firstNumber > secondNumber)
                     {
-                        Console.WriteLine("You max is " + firstNumber + "and your min is " + secondNumber);
-                        Console.ReadLine();
-                        while (guess => firstNumber || guess =< secondNumber)
+                        Console.WriteLine("You max is " + firstNumber + "and your min is " + secondNumber + ". Try to guess a number.");
+                        guess = Convert.ToInt32(Console.ReadLine());
+                        while (guess >= firstNumber || guess <= secondNumber)
                         {
-
+                            Console.WriteLine("Try again");
+                            guess = Convert.ToInt32(Console.ReadLine());
                         }
                     }
                     else if (secondNumber > firstNumber)
                     {
-                        Console.WriteLine("You max is " + secondNumber + "and your min is " + firstNumber);
+                        Console.WriteLine("You max is " + secondNumber + "and your min is " + firstNumber + ". Try to guess a number.");
                         Console.ReadLine();
                     }
                     else if (firstNumber == secondNumber)
