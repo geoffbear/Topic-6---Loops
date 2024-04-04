@@ -9,7 +9,7 @@ namespace Topic_6___Loops
         {
             string choice = "";
             string choicePercentage = "";
-            int max, min, userNumber, percentages;
+            int max, min, userNumber, percentages, guess;
             int addition = 0;
             double totalChoices = 0;
             double above70 = 0;
@@ -31,11 +31,31 @@ namespace Topic_6___Loops
                 if (choice == "1")
                 {
                     Console.WriteLine("You chosen Prompter.");
-                    Console.WriteLine("Give me 2 numbers and you will play a little game with them.");
+                    Console.WriteLine("Give me 2 numbers and you will play a little game with them. (Your larger number will be the max");
+                    Console.WriteLine();
+                    Console.WriteLine("First number.");
+                    int firstNumber = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Second number.");
+                    int secondNumber = Convert.ToInt32(Console.ReadLine());
+                    if (firstNumber > secondNumber)
+                    {
+                        Console.WriteLine("You max is " + firstNumber + "and your min is " + secondNumber);
+                        Console.ReadLine();
+                        while (guess => firstNumber || guess =< secondNumber)
+                        {
 
-
-
-
+                        }
+                    }
+                    else if (secondNumber > firstNumber)
+                    {
+                        Console.WriteLine("You max is " + secondNumber + "and your min is " + firstNumber);
+                        Console.ReadLine();
+                    }
+                    else if (firstNumber == secondNumber)
+                    {
+                        Console.WriteLine("Oops, your numbers are equal, press Enter to continue.");
+                        Console.ReadLine();
+                    }
 
 
 
