@@ -32,7 +32,7 @@ namespace Topic_6___Loops
                 if (choice == "1")
                 {
                     Console.WriteLine("You chosen Prompter.");
-                    Console.WriteLine("Give me 2 numbers and you will play a little game with them. (Your larger number will be the max");
+                    Console.WriteLine("Give me 2 numbers and you will play a little game with them. (Your larger number will be the max)");
                     Console.WriteLine();
                     Console.WriteLine("First number.");
                     int firstNumber = Convert.ToInt32(Console.ReadLine());
@@ -40,18 +40,33 @@ namespace Topic_6___Loops
                     int secondNumber = Convert.ToInt32(Console.ReadLine());
                     if (firstNumber > secondNumber)
                     {
-                        Console.WriteLine("You max is " + firstNumber + "and your min is " + secondNumber + ". Try to guess a number.");
+                        Console.WriteLine("You max is " + firstNumber + " and your min is " + secondNumber + ". Try to guess a number.");
                         guess = Convert.ToInt32(Console.ReadLine());
                         while (guess >= firstNumber || guess <= secondNumber)
                         {
                             Console.WriteLine("Try again");
                             guess = Convert.ToInt32(Console.ReadLine());
                         }
+                        if (guess < firstNumber && guess > secondNumber)
+                        {
+                            Console.WriteLine("You did it! Press Enter to continue.");
+                            Console.ReadLine();
+                        }
                     }
                     else if (secondNumber > firstNumber)
                     {
-                        Console.WriteLine("You max is " + secondNumber + "and your min is " + firstNumber + ". Try to guess a number.");
-                        Console.ReadLine();
+                        Console.WriteLine("You max is " + secondNumber + " and your min is " + firstNumber + ". Try to guess a number.");
+                        guess = Convert.ToInt32(Console.ReadLine());
+                        while (guess <= firstNumber || guess >= secondNumber)
+                        {
+                            Console.WriteLine("Try again");
+                            guess = Convert.ToInt32(Console.ReadLine());
+                        }
+                        if (guess > firstNumber && guess < secondNumber)
+                        {
+                            Console.WriteLine("You did it! Press Enter to continue.");
+                            Console.ReadLine();
+                        }
                     }
                     else if (firstNumber == secondNumber)
                     {
